@@ -8,15 +8,14 @@
 </head>
 <body>
     <script>
-    var arr = new Array('a','b','c','d')
-    console.log(arr)
+    var fun1 = new Function('a','b',"return a+b")
+    console.log(fun1)
+    console.log(fun1(11,22))
 
-    var arr = [11,22,33,44]
-    console.log(arr)
-
-    arr.forEach(function(v,k){
-        console.log(v,k)
-    })
+    function add(num1,num2){
+        return num1 + num2
+    }
+    console.log(add(11,22))
     </script>
 </body>
 </html>
