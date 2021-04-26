@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数组
+        var indices = [];
+        var arr = [11,22,22,55,66,11,88,66,77,66]
+        //	找出元素 66 在数组中的位置
+        var qwe = arr.indexOf(66);
+        while (qwe != -1) {
+            indices.push(qwe);
+            qwe = arr.indexOf(66, qwe + 1);
+        }
+        console.log(indices);
+        //  计算数组中元素的和
+        function add(){
+            var sum = 0
+            arr.forEach(function(v,k){
+                // console.log(v)
+                sum = sum + v
+            })
+            console.log(sum)
+        }
+        add()
+        //  移除数组 arr 中的所有值等于 22 的元素，不要直接修改数组 arr，结果返回新的数组
+        arr.splice(1,2);
+        console.log(arr);
+        //  移除数组 arr 中的所有值等于 22 的元素，直接在给定的 arr 数组上进行操作，并将结果返回。
+        delete arr[22];
+        console.log(arr);
+        //  统计数组 arr 中值等于 66 的元素出现的次数
+        console.log(indices.length);
+
+        //函数
+        //  封装一个$函数，并实现DOM节点查找功能 id查找、class查找、元素查找
+        function $(canshu){
+            var aaa = canshu.substr(0,1);
+            if(aaa=="#"){
+                var aaa = document.querySelector(canshu);
+            }else{
+                var aaa = document.querySelectorAll(canshu);
+            }
+            return aaa;
+        }
+    </script>
+</body>
+</html>
