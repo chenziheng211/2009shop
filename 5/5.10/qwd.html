@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="/jquery.js"></script>
+    <script>
+    // 请求第一个密码
+    $.ajax({
+        url: "http://vue.api.comcto.com/api/password1.php",
+        method:'get',
+        success:function(res){
+            console.log("服务器返回值：",res)   
+        }
+    })
+    </script>
+</body>
+</html>

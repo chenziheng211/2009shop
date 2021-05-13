@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    new Promise(function(resolve,reject){
+        // 当异步操作成功 调用resolve
+        // 原生Ajax
+        // 实例化 XHR
+        var xhr = new XMLHttpRequest()
+        // 监听
+        xhr.onreadystatechange = function (){
+            if(xhr.readyState==4 && xhr.status==200){
+                // 接收服务器响应数据
+                var res_data = xhr.responseText
+                console.log("接收到的服务器的数据：",res_data)
+                resolve(res_data)
+            }
+        }
+        xhr.open("get","http://vue.api.comcto.com/api/password1.php")
+        xhr.send()
+    }).then(function(data){
+        console.log("then方法收到的数据：",data)
+    })
+    </script>
+</body>
+</html>
